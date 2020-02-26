@@ -1,21 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Index = ({data}) => {
+  const page = data.allWordpressPage.edges[0].node;
+  console.log(page);
+  return(
+    <Layout>
+    <SEO title="Gerardo Jaramillo Uses" />
+      <div dangerouslySetInnerHTML={{ __html: page.content }} />
+  </Layout>)
+}
 
-export default IndexPage
+export default Index
+
+export const query = graphql`
+  {
+  allWordpressPage(filter: {id: {eq: "fc6cd7b4-1ed2-5367-bbc0-7c879713c099"}}) {
+    edges{
+      node {
+        id
+        content
+        excerpt
+        date
+        id
+        author {
+          name
+        }
+      }
+    }
+  }
+}
+`

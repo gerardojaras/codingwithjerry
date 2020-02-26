@@ -1,3 +1,9 @@
+@import "node_modules/nord/src/sass/nord.scss";
 .header{
-  background-color: red;
+  background-color: $nord4;
+  padding: 2rem;
+  .logo{
+    height: auto;
+    width: 300px;
+  }
 }

@@ -9,7 +9,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $nord4;
+  background-color: $nord6;
+  color: $nord3;
 }
 article,
 aside,
@@ -45,10 +46,13 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: $nord1;
+  text-decoration: none;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: $nord1;
 }
 abbr[title] {
   border-bottom: none;

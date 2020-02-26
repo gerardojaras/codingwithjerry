@@ -41,6 +41,15 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `wordpress.projects.codingwithjerry.com`,
+        protocol: `http`,
+        hostingWPCOM: false,
+        useACF: false
+      },
     }
   ],
 }
