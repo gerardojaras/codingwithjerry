@@ -17,7 +17,7 @@ export default Index
 
 export const query = graphql`
   {
-  allWordpressPage(filter: {id: {eq: "fc6cd7b4-1ed2-5367-bbc0-7c879713c099"}}) {
+  allWordpressPage(filter: {id: {eq: "429075ba-92e8-5196-8a48-bfc0aca43625"}}) {
     edges{
       node {
         id

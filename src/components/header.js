@@ -5,14 +5,21 @@ import Styles from "./header.module.scss"
 import Logo from "./../images/logo.png"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div className={Styles.header}>
-      <Link to="/"><img src={Logo} alt="Coding With Jerry" className={Styles.logo}/></Link>
+      <Link to="/">
+        <img src={Logo} alt="Coding With Jerry" className={Styles.logo} />
+      </Link>
+    </div>
+    <div className={Styles.menu}>
+      <ul>
+        <li>
+          <Link to="/">About Me</Link>
+        </li>
+        <li>
+          <Link to="projects">Projects</Link>
+        </li>
+      </ul>
     </div>
   </header>
 )

@@ -1,9 +1,24 @@
 @import "node_modules/nord/src/sass/nord.scss";
-.header{
+header {
+  display: flex !important;
   background-color: $nord4;
-  padding: 2rem 2rem 0 2rem;
-  .logo{
-    height: auto;
-    width: 300px;
+  flex-direction: row;
+  justify-content: space-around;
+  .header {
+    display: flex;
+    padding: 2rem 2rem 0 2rem;
+    .logo {
+      height: auto;
+      width: 300px;
+    }
+  }
+  .menu {
+    display: flex;
+    ul {
+      list-style-type: none !important;
+      li {
+        margin-right: 1rem;
+      }
+    }
   }
 }
