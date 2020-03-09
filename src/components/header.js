@@ -5,8 +5,15 @@ import Styles from "./header.module.scss"
 import Logo from "./../images/logo.png"
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <div className={Styles.header}>
+  <div className={Styles.header}>
+    <div
+      className={Styles.logo_wrap}
+      style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `0 1.0875rem 1.45rem`,
+      }}
+    >
       <Link to="/">
         <img src={Logo} alt="Coding With Jerry" className={Styles.logo} />
       </Link>
@@ -17,11 +24,11 @@ const Header = ({ siteTitle }) => (
           <Link to="/">About Me</Link>
         </li>
         <li>
-          <Link to="projects">Projects</Link>
+          <Link to="/uses">Uses</Link>
         </li>
       </ul>
     </div>
-  </header>
+  </div>
 )
 
 Header.propTypes = {

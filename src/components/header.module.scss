@@ -1,23 +1,35 @@
 @import "node_modules/nord/src/sass/nord.scss";
-header {
-  display: flex !important;
+.header {
+  display: grid;
   background-color: $nord4;
-  flex-direction: row;
-  justify-content: space-around;
-  .header {
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  .logo_wrap {
     display: flex;
-    padding: 2rem 2rem 0 2rem;
+    width: 400px;
     .logo {
       height: auto;
       width: 300px;
     }
   }
   .menu {
+    width: 400px;
     display: flex;
+    margin-left: auto;
     ul {
       list-style-type: none !important;
+      display: flex;
+      flex-direction: row;
       li {
         margin-right: 1rem;
+
+        a,
+        a:hover {
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
