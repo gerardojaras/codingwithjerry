@@ -6,14 +6,7 @@ import Logo from "./../images/logo.png"
 
 const Header = ({ siteTitle }) => (
   <div className={Styles.header}>
-    <div
-      className={Styles.logo_wrap}
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0 1.0875rem 1.45rem`,
-      }}
-    >
+    <div className={Styles.logo_wrap}>
       <Link to="/">
         <img src={Logo} alt="Coding With Jerry" className={Styles.logo} />
       </Link>
