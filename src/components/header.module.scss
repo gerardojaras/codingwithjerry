@@ -16,7 +16,6 @@
   }
   .menu {
     width: 400px;
-    display: flex;
     margin-left: auto;
     ul {
       list-style-type: none !important;
@@ -24,7 +23,6 @@
       flex-direction: row;
       li {
         margin-right: 1rem;
-
         a,
         a:hover {
           text-decoration: none;

@@ -5,7 +5,6 @@ import { graphql } from "gatsby"
 
 const Index = ({data}) => {
   const page = data.allWordpressPage.edges[0].node;
-  console.log(page);
   return(
     <Layout>
     <SEO title="Gerardo Jaramillo Uses" />

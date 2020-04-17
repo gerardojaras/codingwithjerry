@@ -1,31 +1,31 @@
 const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
 
-exports.createPages = async ({graphql, actions}) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
-  query{
-    allWordpressPost{
-      edges{
-        node{
-          id
-          slug
+  return graphql(`
+    {
+      allWordpressPost(sort: { fields: [date] }) {
+        edges {
+          node {
+            title
+            excerpt
+            content
+            slug
+          }
         }
       }
     }
-  }
-  `)
-
-  const templatePost = path.resolve(`./src/templates/post.js`)
-  result.data.allWordpressPost.edges.forEach(
-    edge => {
+  `).then(result => {
+    result.data.allWordpressPost.edges.forEach(({ node }) => {
       createPage({
-        path: edge.node.slug,
-        component: slash(templatePost),
+        path: node.slug,
+        component: path.resolve(`./src/templates/post.js`),
         context: {
-          id: edge.node.id,
+          // This is the $slug variable
+          // passed to blog-post.js
+          slug: node.slug,
         },
       })
-    }
-  )
+    })
+  })
 }
