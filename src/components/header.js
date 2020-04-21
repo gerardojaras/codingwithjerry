@@ -7,7 +7,7 @@ import Logo from "./../images/logo.png"
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query {
-  allWordpressPost(sort: {fields: [date]}) {
+  allWordpressPost(sort: {fields: [date]}, filter: {categories: {elemMatch: {name: {ne: "Uncategorized"}}}}) {
     edges {
       node {
         categories {
