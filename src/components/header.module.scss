@@ -48,8 +48,7 @@
     padding: 12px 16px;
     z-index: 1;
   }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
+}
+.dropdown:hover .dropdownContent {
+  display: block;
 }

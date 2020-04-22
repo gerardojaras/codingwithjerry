@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-google-analytics": "^2.2.4",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
@@ -24,6 +25,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "html-react-parser": "^0.10.3",
     "prettier": "^1.19.1"
   },
   "keywords": [
