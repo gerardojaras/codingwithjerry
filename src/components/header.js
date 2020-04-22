@@ -37,16 +37,18 @@ const Header = ({ siteTitle }) => {
           <li>
             <Link to="/uses">Uses</Link>
           </li>
-          <li>
-            Coding Recipies
-            <div>
-              {data.allWordpressPost.edges.map(({ node }, i) => (
-                <div key={i}>
-                   <Link to={node.categories[0].slug}>
-                     <span dangerouslySetInnerHTML={{ __html: node.categories[0].name }}></span>
-                   </Link>
-                </div>
-              ))}
+          <li >
+            <div className={Styles.dropdown}>
+              Coding Recipies
+              <div className={Styles.dropdownContent}>
+                {data.allWordpressPost.edges.map(({ node }, i) => (
+                  <div key={i}>
+                    <Link to={node.categories[0].slug}>
+                      <span dangerouslySetInnerHTML={{ __html: node.categories[0].name }}></span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </li>
         </ul>
