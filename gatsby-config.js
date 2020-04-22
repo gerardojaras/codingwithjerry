@@ -54,24 +54,21 @@ module.exports = {
           replacementUrl: "",
         },
       },
-    },{
-      resolve: `gatsby-plugin-google-analytics`,
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-154049501-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "UA-154049501-1",
-      }
+        id: "GTM-PXPCS79",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
+      },
     }
   ],
 }
