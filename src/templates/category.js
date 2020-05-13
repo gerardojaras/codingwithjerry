@@ -19,14 +19,15 @@ export default ({ data }) =>{
     <Layout>
       <section className={Styles.content} id="main">
         {data.allWordpressPost.edges.map(({node}, i) => (
-            <Link to={node.slug}>
               <div key={i}>
+                <Link to={node.slug}>
                 <h2 dangerouslySetInnerHTML={{__html: node.title}}/>
                 <div>
                   {parse(node.excerpt, options)}
                 </div>
+                </Link>
+                <Link to={node.slug} className={Styles.btn}>Continue Reading</Link>
               </div>
-            </Link>
           )
         )}
       </section>
