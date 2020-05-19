@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,6 +38,10 @@ module.exports = {
         fonts: [
           {
             family: `Rubik`,
+            variants:[`300`, `400`, `500`, `700`, `900`]
+          },
+          {
+            family: `Roboto`,
             variants:[`300`, `400`, `500`, `700`, `900`]
           }
         ]
