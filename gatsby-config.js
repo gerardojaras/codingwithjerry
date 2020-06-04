@@ -7,12 +7,22 @@ module.exports = {
   plugins: [
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+      options:
+        {
+          name: `images`,
+          path: `${__dirname}/src/images`,
+        }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options:
+        {
+          name: `markdown-pages`,
+          path: `${__dirname}/src/markdown-pages`
+        }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -38,14 +48,14 @@ module.exports = {
         fonts: [
           {
             family: `Rubik`,
-            variants:[`300`, `400`, `500`, `700`, `900`]
+            variants: [`300`, `400`, `500`, `700`, `900`],
           },
           {
             family: `Roboto`,
-            variants:[`300`, `400`, `500`, `700`, `900`]
-          }
-        ]
-      }
+            variants: [`300`, `400`, `500`, `700`, `900`],
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-wordpress`,
@@ -53,7 +63,7 @@ module.exports = {
         baseUrl: `wordpress.projects.codingwithjerry.com`,
         protocol: `http`,
         hostingWPCOM: false,
-        useACF: false
+        useACF: false,
       },
     },
     {
@@ -70,6 +80,6 @@ module.exports = {
         // Defaults to null
         defaultDataLayer: { platform: "gatsby" },
       },
-    }
+    },
   ],
 }

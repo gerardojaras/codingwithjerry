@@ -3,24 +3,36 @@ import PropTypes from "prop-types"
 import React from "react"
 import Styles from "./header.module.scss"
 import Logo from "./../images/logo.png"
+import Button from "@material-ui/core/Button"
+import Menu from "@material-ui/core/Menu"
+import MenuItem from "@material-ui/core/MenuItem"
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query {
-  allWordpressPost(sort: {fields: [date]}, filter: {categories: {elemMatch: {name: {ne: "Uncategorized"}}}}) {
-    edges {
-      node {
-        categories {
-          name
-          slug
-          id
+      allWordpressPost(sort: {fields: [date]}, filter: {categories: {elemMatch: {name: {ne: "Uncategorized"}}}}) {
+        edges {
+          node {
+            categories {
+              name
+              slug
+              id
+            }
+          }
         }
       }
     }
-  }
-}
-
   `)
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className={Styles.header}>
@@ -50,6 +62,22 @@ const Header = ({ siteTitle }) => {
                 ))}
               </div>
             </div>
+          </li>
+          <li>
+            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+              Open Menu
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
           </li>
         </ul>
       </nav>
