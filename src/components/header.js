@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
           </li>
           <li>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              Open Menu
+              Coding Recipes
             </Button>
             <Menu
               id="simple-menu"
@@ -74,9 +74,13 @@ const Header = ({ siteTitle }) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              {data.allWordpressPost.edges.map(({ node }, i) => (
+                <MenuItem key={i}>
+                  <Link to={node.categories[0].slug}>
+                    <span dangerouslySetInnerHTML={{ __html: node.categories[0].name }}></span>
+                  </Link>
+                </MenuItem>
+              ))}
             </Menu>
           </li>
         </ul>
