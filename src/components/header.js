@@ -88,7 +88,7 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-    </div>
+    </head>
   )
 }
 
