@@ -6,6 +6,7 @@ import Logo from "./../images/logo.png"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
+import SEO from "./seo"
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -42,7 +43,8 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <div className={Styles.header}>
+    <head className={Styles.header}>
+      <SEO title="Coding With Jerry" />
       <div className={Styles.logo_wrap}>
         <Link to="/">
           <img src={Logo} alt="Coding With Jerry" className={Styles.logo} />
