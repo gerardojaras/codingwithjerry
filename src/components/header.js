@@ -43,7 +43,7 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <head className={Styles.header}>
+    <header className={Styles.header}>
       <SEO title="Coding With Jerry" />
       <div className={Styles.logo_wrap}>
         <Link to="/">
