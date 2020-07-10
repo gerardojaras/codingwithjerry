@@ -88,7 +88,7 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-    </head>
+    </header>
   )
 }
 
