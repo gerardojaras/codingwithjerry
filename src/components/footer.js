@@ -5,9 +5,7 @@ const Footer = () =>(
   <div className={Styles.footer}>
     Coder since 1996
     <footer>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      © Gerardo Jaramillo {new Date().getFullYear()}
     </footer>
   </div>
 )

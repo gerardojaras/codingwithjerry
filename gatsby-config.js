@@ -2,16 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Coding With Jerry`,
     description: `I am a developer with over 20 years of experience, trying to make sense of the development world.`,
-    author: `@gatsbyjs`,
+    author: `Gerardo Jaramillo (Jerry)`,
+    siteUrl: `https://codingwithjerry.com/`
   },
   plugins: [
-    "gatsby-source-google-docs",
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: ["gatsby-remark-images"],
-      },
-    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,

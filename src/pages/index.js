@@ -2,13 +2,12 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import Button from "@material-ui/core/IconButton"
 
 const Index = ({ data }) => {
   const page = data.allWordpressPage.edges[0].node
   return (
     <Layout>
-      <SEO title="Gerardo Jaramillo Uses" />
+      <SEO title="About Me" />
       <div dangerouslySetInnerHTML={{ __html: page.content }} />
     </Layout>
   )
