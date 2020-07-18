@@ -55,15 +55,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        baseUrl: `wordpress.projects.codingwithjerry.com`,
-        protocol: `http`,
-        hostingWPCOM: false,
-        useACF: false,
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PXPCS79",

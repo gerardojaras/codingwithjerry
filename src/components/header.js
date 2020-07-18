@@ -1,43 +1,41 @@
-import { graphql, Link, useStaticQuery, navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Styles from "./header.module.scss"
 import Logo from "./../images/logo.png"
 import Button from "@material-ui/core/Button"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
 import SEO from "./seo"
 
 const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allWordpressPost(
-        sort: { fields: [date] }
-        filter: { categories: { elemMatch: { name: { ne: "Uncategorized" } } } }
-      ) {
-        edges {
-          node {
-            categories {
-              name
-              slug
-              id
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allWordpressPost(
+  //       sort: { fields: [date] }
+  //       filter: { categories: { elemMatch: { name: { ne: "Uncategorized" } } } }
+  //     ) {
+  //       edges {
+  //         node {
+  //           categories {
+  //             name
+  //             slug
+  //             id
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  const [anchorEl, setAnchorEl] = React.useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
+  // const [anchorEl, setAnchorEl] = React.useState(null)
+  //
+  // const handleClick = event => {
+  //   setAnchorEl(event.currentTarget)
+  // }
+  //
+  // const handleClose = () => {
+  //   setAnchorEl(null)
+  // }
+  //
   const gotoPage = page => {
     navigate(page)
   }
@@ -58,7 +56,7 @@ const Header = ({ siteTitle }) => {
           <li>
             <Button onClick={() => gotoPage("/uses")}>Uses</Button>
           </li>
-          <li>
+          {/*<li>
             <Button
               aria-controls="simple-menu"
               aria-haspopup="true"
@@ -85,7 +83,7 @@ const Header = ({ siteTitle }) => {
                 </MenuItem>
               ))}
             </Menu>
-          </li>
+          </li>*/}
         </ul>
       </nav>
     </header>

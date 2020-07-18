@@ -1,48 +1,35 @@
 const path = require(`path`)
 
+const page = require.resolve(`./src/templates/page.js`)
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      posts: allWordpressPost(sort: { fields: [date] }) {
-        edges {
-          node {
-            title
-            excerpt
-            content
+      markDowns: allMarkdownRemark {
+        nodes {
+          html
+          id
+          frontmatter {
+            author
+            date
+            description
+            keywords
             slug
           }
-        }
-      }
-      categories: allWordpressCategory {
-        edges {
-          node {
-            name
-            slug
-          }
+          excerpt
         }
       }
     }
   `).then(result => {
-    result.data.posts.edges.forEach(({ node }) => {
+    //console.log(result.data.markDowns.nodes[0].html)
+    result.data.markDowns.nodes.forEach((node) => {
       createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/post.js`),
+        path: node.frontmatter.slug,
+        component: page,
         context: {
-          // This is the $slug variable
-          // passed to blog-post.js
-          slug: node.slug,
-        },
-      })
-    })
-    result.data.categories.edges.forEach(({node}) =>{
-      createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/category.js`),
-        context:{
-          name: node.name,
-          slug: node.slug,
-          category: node.name
+          // additional data can be passed via context
+          slug: node.frontmatter.slug
         }
       })
     })

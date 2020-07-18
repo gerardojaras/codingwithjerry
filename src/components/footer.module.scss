@@ -1,3 +1,19 @@
 .footer{
   padding: 2rem;
+  color: black;
+  .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .copyRights{
+    font-size: 0.7rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    a, a:visited{
+      color: black;
+    }
+  }
 }
