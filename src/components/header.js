@@ -56,6 +56,9 @@ const Header = ({ siteTitle }) => {
           <li>
             <Button onClick={() => gotoPage("/uses")}>Uses</Button>
           </li>
+          <li>
+            <Button onClick={() => gotoPage("/Recipes")}>Recipes</Button>
+          </li>
           {/*<li>
             <Button
               aria-controls="simple-menu"

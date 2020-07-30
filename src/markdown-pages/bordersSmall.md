@@ -5,6 +5,8 @@ title: "How to make borders smaller than the size of the div."
 description: "A collection of coding recipes that have help me to build projects and apps"
 keywords: "coding, app, recipe, windows, linux, mac, c#, javascript, gatsby, angular, react, vue"
 author: "Gerardo Jaramillo, jerry@codingwithjerry.com"
+category: "CSS"
+tags: "css, link, colors, borders"
 ---
 <pre>
 .page-title:after {
